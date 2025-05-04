@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    ECR_REPO = '890742580558.dkr.ecr.ap-south-1.amazonaws.com/node-app'
+    ECR_REPO = '183295449549.dkr.ecr.ap-south-1.amazonaws.com/nodeapp'
     IMAGE_TAG = "${env.BUILD_NUMBER}"
     IMAGE_URI = "${ECR_REPO}:${IMAGE_TAG}"
     AWS_REGION = 'ap-south-1'
@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git url:'https://amalspillai02:${GITHUB_TOKEN}@github.com/amalspillai02/project3.git', branch:'main'
+        git url:'https://abhishekanandgit:${GITHUB_TOKEN}@github.com/abhishekanandgit/project3.git', branch:'main'
         sh 'ls -l'  // List files to confirm the file path
       }
     }
